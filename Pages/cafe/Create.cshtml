@@ -1,0 +1,49 @@
+@page
+@model RazorPagesMovie.Pages_cafe.CreateModel
+
+@{
+    ViewData["Title"] = "Cafe";
+}
+
+<h1>Inicio</h1>
+
+<h4>cafetales</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="cafetales.marca" class="control-label"></label>
+                <input asp-for="cafetales.marca" class="form-control" />
+                <span asp-validation-for="cafetales.marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cafetales.inventario" class="control-label"></label>
+                <input asp-for="cafetales.inventario" class="form-control" />
+                <span asp-validation-for="cafetales.inventario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cafetales.cantidad" class="control-label"></label>
+                <input asp-for="cafetales.cantidad" class="form-control" />
+                <span asp-validation-for="cafetales.cantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cafetales.Precio" class="control-label"></label>
+                <input asp-for="cafetales.Precio" class="form-control" />
+                <span asp-validation-for="cafetales.Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

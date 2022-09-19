@@ -1,0 +1,21 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+tbody{
+  color: rgba(0, 0, 0, 0.925);
+}
+body {
+  margin-bottom: 60px;
+  color: rgb(31, 15, 73);
+}

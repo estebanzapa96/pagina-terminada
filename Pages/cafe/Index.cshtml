@@ -1,0 +1,54 @@
+@page
+@model RazorPagesMovie.Pages_cafe.IndexModel
+
+@{
+    ViewData["Title"] = "cafe";
+}
+
+<h1>Inicio</h1>
+
+<p>
+    <a asp-page="Create">Crear</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.cafetales[0].marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cafetales[0].inventario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cafetales[0].cantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cafetales[0].Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.cafetales) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.inventario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
